@@ -1,6 +1,6 @@
 // http://webpack.github.io/docs/configuration.html
 // http://webpack.github.io/docs/webpack-dev-server.html
-var app_root = 'src'; // the app root folder: src, src_users, etc
+var app_root = 'src_users'; // the app root folder: src, src_users, etc
 var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -49,6 +49,5 @@ module.exports = {
       verbose: true,
       dry: false, // true for simulation
     }),
-    new webpack.DefinePlugin({ 'typeof window': '\"object\"' })
   ],
 };

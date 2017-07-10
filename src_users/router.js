@@ -3,6 +3,7 @@ import { Router, Route, IndexRoute } from "react-router";
 import { history } from "./store.js";
 import App from "./components/App";
 import Home from "./components/Home";
+import New from "./components/New";
 import UserEdit from "./components/UserEdit";
 import NotFound from "./components/NotFound";
 
@@ -10,7 +11,8 @@ import NotFound from "./components/NotFound";
 const router = (
   <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
     <Route path="/" component={App}>
-      <IndexRoute component={Home}/>
+      <IndexRoute component={New}/>
+      <Route path="new" component={New} />
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>
