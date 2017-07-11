@@ -8,5 +8,5 @@ export const SAVE_TASTING = 'SAVE_TASTING';
 */
 
 export function saveTasting(tasting) {
-	return { type: SAVE_TASTING, tasting }; // add meta-attributes
+	return { type: SAVE_TASTING, tasting };
 }
