@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import SliderPanel from '../components/SliderPanel';
 
 
-
 const mapStateToProps = (state, ownProps) => ({
 	components: state.tasting.components
 });

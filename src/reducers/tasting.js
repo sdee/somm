@@ -1,4 +1,4 @@
-import { SAVE_TASTING } from '../actions/actions';
+import { RATE_COMPONENT, SAVE_TASTING } from '../actions/actions';
 const wineData = require('../data/wine.json');
 
 // TODO: change components to use .keys
@@ -14,8 +14,14 @@ for (const component of wineData.components) {
 console.log(initialState);
 
 const tastingReducer = (state = initialState, action) => {
-  switch (action.type) {
-
+	switch (action.type) {
+	case RATE_COMPONENT: {
+		const currentRatings = Object.assign({}, state.currentTasting);
+		currentRatings[action.component] = action.rating;
+		return Object.assign({}, state, {
+			currentTasting: currentRatings
+		});
+	}
 
 default: {
   return state;

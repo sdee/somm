@@ -12,6 +12,7 @@ export function saveTasting(tasting) {
 	return { type: SAVE_TASTING, tasting };
 }
 
-export function rateComponent(rating) {
-	return { type: RATE_COMPONENT, rating };
+export function rateComponent(component, rating) {
+  console.log("rate component");
+	return { type: RATE_COMPONENT, component, rating };
 }
