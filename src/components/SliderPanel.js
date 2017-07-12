@@ -12,8 +12,7 @@ export default class SliderPanel extends React.Component {
 				{
          components.map(d => <RatingSlider component={d} />)
        }
-     </div>
-
+			</div>
 		);
 	}
 }

@@ -1,10 +1,11 @@
 import { RATE_COMPONENT, SAVE_TASTING } from '../actions/actions';
+
 const wineData = require('../data/wine.json');
 
 // TODO: change components to use .keys
 const initialState = {
 	components: wineData.components,
-  currentTasting: {}
+	currentTasting: {}
 };
 
 for (const component of wineData.components) {
@@ -23,10 +24,10 @@ const tastingReducer = (state = initialState, action) => {
 		});
 	}
 
-default: {
-  return state;
-}
-}
+	default: {
+		return state;
+	}
+	}
 };
 
 export default tastingReducer;

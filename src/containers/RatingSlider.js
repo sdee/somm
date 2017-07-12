@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Slider from '../components/Slider';
-import {rateComponent} from '../actions/actions';
+import { rateComponent } from '../actions/actions';
 
 
 const mapStateToProps = (state, ownProps) => ({
@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-	changeValue: (e) => { dispatch(rateComponent(ownProps.component, e.target.value))}
+	changeValue: (e) => { dispatch(rateComponent(ownProps.component, e.target.value)); }
 });
 
 const RatingSlider = connect(
