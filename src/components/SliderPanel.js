@@ -1,6 +1,5 @@
 import React from 'react';
-
-const wineData = require('../data/wine.json');
+import RatingSlider from '../containers/RatingSlider'
 
 export default class SliderPanel extends React.Component {
 
@@ -10,10 +9,8 @@ export default class SliderPanel extends React.Component {
 
 		return (
 			<div><h1>new</h1>
-       {
-         components.map((d) => {
-          <b>d</b>
-         })
+				{
+         components.map(d => <RatingSlider component={d} />)
        }
      </div>
 
