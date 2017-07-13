@@ -1,7 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
-const {Radar} = require("react-chartjs");
+
+const { Radar } = require('react-chartjs');
 
 const chartData = {
 	labels: [],
