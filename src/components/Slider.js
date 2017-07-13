@@ -23,7 +23,7 @@ export default class Slider extends React.Component {
 				<Col md={2}>
 					{component}
 				</Col>
-				<Col md={3}>
+				<Col md={5}>
 					<ReactBootstrapSlider
 						name={component}
 						value={currentRating}

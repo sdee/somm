@@ -5,10 +5,9 @@ export default class SliderPanel extends React.Component {
 
 	render() {
 		const components = this.props.components;
-    console.log(components);
 
 		return (
-			<div><h1>new</h1>
+			<div>
 				{
          components.map(d => <RatingSlider component={d} />)
        }
