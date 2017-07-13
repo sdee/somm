@@ -1,3 +1,4 @@
+import axios from "axios"
 /*
 *Action types
 */
@@ -8,9 +9,18 @@ export const RATE_COMPONENT = 'RATE_COMPONENT';
 *Action creators
 */
 
-export function saveTasting(tasting) {
-	return { type: SAVE_TASTING, tasting };
+export function saveTasting(tasting, dispatch) {
+  console.log("SAVE");
+	console.log(tasting);
 }
+
+// export function createGroup(dispatch) {
+// 	return axios.post('/api/groups', )
+//   .then((response) => { dispatch({ type: 'CREATE', element: response }); })
+//   .catch((error) => {
+// 	console.log(error);
+// });
+// }
 
 export function rateComponent(component, rating) {
 	console.log('rate component');

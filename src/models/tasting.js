@@ -9,7 +9,6 @@ const attributes = wineData.attributes;
 const schemaSpec = {};
 
 attributes.forEach((a) => {
-	console.log(a);
 	schemaSpec[a] = { type: Number, required: true };
 });
 
