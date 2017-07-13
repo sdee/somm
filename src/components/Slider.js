@@ -31,7 +31,7 @@ export default class Slider extends React.Component {
 						step={step}
 						max={max}
 						min={min}
-            tooltip={"hide"}
+						tooltip={"hide"}
 						orientation="horizontal"
 					/>
 				</Col>
