@@ -37,6 +37,8 @@
     "chart.js": "^1.1.1",
     "jquery": "^3.2.1",
     "json": "^9.0.6",
+    "koa": "^1.2.1",
+    "koa-rest-mongoose": "^2.0.3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-bootstrap": "^0.30.7",
