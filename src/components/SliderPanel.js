@@ -7,7 +7,7 @@ export default class SliderPanel extends React.Component {
 		const components = this.props.components;
 
 		return (
-			<div style={{paddingTop: '60px'}}>
+			<div style={{ paddingTop: '60px' }}>
 				{
          components.map(d => <RatingSlider component={d} />)
        }

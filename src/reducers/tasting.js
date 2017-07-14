@@ -1,4 +1,4 @@
-import { RATE_COMPONENT, SAVE_TASTING } from '../actions/actions';
+import { RATE_COMPONENT, SAVE_TASTING, LOAD_TASTING } from '../actions/actions';
 
 const wineData = require('../data/wine.json');
 
@@ -21,6 +21,12 @@ const tastingReducer = (state = initialState, action) => {
 		currentRatings[action.component] = action.rating;
 		return Object.assign({}, state, {
 			currentTasting: currentRatings
+		});
+	}
+
+	case LOAD_TASTING: {
+		return Object.assign({}, state, {
+			currentTasting: action.tasting
 		});
 	}
 
