@@ -42,6 +42,12 @@ module.exports = {
   },
   devServer: {
     contentBase: __dirname + '/public',
+    proxy: {
+     '/api': {
+       target: 'http://localhost:5000',
+       secure: false
+     }
+   }
   },
   plugins: [
     new CleanWebpackPlugin(['css/main.css', 'js/bundle.js'], {

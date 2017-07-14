@@ -4,7 +4,7 @@ const KoaRestMongoose = require('koa-rest-mongoose');
 const wineData = require('./src/data/wine.json');
 
 // 1 step, mongoose
-const mongoUrl = '127.0.0.1:27017/koa_rest_mongoose';
+const mongoUrl = '127.0.0.1:27017/test';
 
 const Schema = mongoose.Schema;
 console.log(wineData);

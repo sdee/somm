@@ -12,6 +12,11 @@ export const RATE_COMPONENT = 'RATE_COMPONENT';
 export function saveTasting(tasting, dispatch) {
   console.log("SAVE");
 	console.log(tasting);
+  return axios.post('/api/tasting/', tasting)
+    // .then((response) => { dispatch({ type: 'CREATE', element: response }); })
+    .catch((error) => {
+    console.log(error);
+  });
 }
 
 // export function createGroup(dispatch) {
