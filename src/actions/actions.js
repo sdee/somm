@@ -28,6 +28,5 @@ export function rateComponent(component, rating) {
 }
 
 export function loadTasting(tasting) {
-	console.log('load tasting');
 	return { type: LOAD_TASTING, tasting };
 }
