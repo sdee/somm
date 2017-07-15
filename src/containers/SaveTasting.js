@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import Slider from '../components/Slider';
-import SaveButton from '../components/SaveButton'
-import { rateComponent } from '../actions/actions';
-import { saveTasting } from '../actions/actions';
+import SaveButton from '../components/SaveButton';
+import { rateComponent, saveTasting } from '../actions/actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentTasting: state.tasting.currentTasting

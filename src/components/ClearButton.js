@@ -3,12 +3,12 @@ import { Button } from 'react-bootstrap';
 import TastingForm from '../containers/TastingForm';
 import TastingPreview from '../containers/TastingPreview'
 
-export default class SaveButton extends React.Component {
+export default class ClearButton extends React.Component {
 	render() {
-		const { onClick } = this.props;
+		const { clearTasting } = this.props;
 		return (
 			<div>
-				<Button bsStyle="primary" onClick={onClick} style={{margin:'0px'}}>Save</Button>
+				<Button bsStyle="primary" onClick={clearTasting} style={{margin:'0px'}}>Clear</Button>
 			</div>
 		);
 	}
