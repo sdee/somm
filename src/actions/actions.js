@@ -13,9 +13,16 @@ export const LOAD_TASTING = 'LOAD_TASTING';
 */
 
 export function saveTasting(tasting, dispatch) {
+  //
+  // const postTasting = Object.assign({}, tasting, {
+	// _id: '5'
+  // });
+  console.log("INPUT");
+  console.log(tasting);
 	return axios.post('/api/tasting/', tasting)
     .then((response) => {
-	console.log(response);
+	const id = response.data._id;
+	browserHistory.push(`/tasting/${id}`)
 })
     .catch((error) => {
 	console.log(error);
