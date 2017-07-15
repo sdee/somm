@@ -4,7 +4,6 @@ import React from 'react';
 export default class Home extends React.Component {
   // render
 	render() {
-		console.log('Render');
 		return (
 			<div className="page-home">
 				<h4>Hello world!</h4>

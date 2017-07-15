@@ -1,4 +1,4 @@
-import { RATE_COMPONENT, SAVE_TASTING, LOAD_TASTING } from '../actions/actions';
+import { RATE_COMPONENT, SAVE_TASTING, LOAD_TASTING, CLEAR_TASTING } from '../actions/actions';
 
 const wineData = require('../data/wine.json');
 
@@ -11,8 +11,6 @@ const initialState = {
 for (const component of wineData.components) {
 	initialState.currentTasting[component] = 0;
 }
-
-console.log(initialState);
 
 const tastingReducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -29,6 +27,18 @@ const tastingReducer = (state = initialState, action) => {
 			currentTasting: action.tasting
 		});
 	}
+
+	case CLEAR_TASTING: {
+		const emptyTasting = {};
+		for (const component of wineData.components) {
+			emptyTasting[component] = 0;
+		}
+
+		return Object.assign({}, state, {
+			currentTasting: emptyTasting
+		});
+	}
+
 
 	default: {
 		return state;

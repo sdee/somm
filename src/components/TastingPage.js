@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import { Button } from 'react-bootstrap';
 import { omit } from 'underscore';
+import { browserHistory, Link } from 'react-router';
 import { loadTasting } from '../actions/actions';
 import TastingPreview from '../containers/TastingPreview';
 
@@ -31,6 +33,7 @@ export default class TastingPage extends React.Component {
 				<b>tasting</b><br />
 				<TastingPreview />
 				{id}
+        <div><Link to="/new"><Button bsStyle="primary">Create Another</Button></Link></div>
 			</div>
 		);
 	}

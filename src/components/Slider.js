@@ -12,9 +12,6 @@ export default class Slider extends React.Component {
     // destructure
 		console.log(this.props);
 		const { component, currentRating, changeValue } = this.props;
-    // const component = this.props.component;
-    // const currentRating = this.props.currentRating;
-    // const changeValue = this.props.changeValue;
 		const step = 1;
 		const max = 10;
 		const min = 0;

@@ -6,6 +6,7 @@ import { browserHistory } from 'react-router';
 export const SAVE_TASTING = 'SAVE_TASTING';
 export const RATE_COMPONENT = 'RATE_COMPONENT';
 export const LOAD_TASTING = 'LOAD_TASTING';
+export const CLEAR_TASTING = 'CLEAR_TASTING';
 
 
 /*
@@ -13,12 +14,6 @@ export const LOAD_TASTING = 'LOAD_TASTING';
 */
 
 export function saveTasting(tasting, dispatch) {
-  //
-  // const postTasting = Object.assign({}, tasting, {
-	// _id: '5'
-  // });
-  console.log("INPUT");
-  console.log(tasting);
 	return axios.post('/api/tasting/', tasting)
     .then((response) => {
 	const id = response.data._id;
@@ -36,4 +31,8 @@ export function rateComponent(component, rating) {
 
 export function loadTasting(tasting) {
 	return { type: LOAD_TASTING, tasting };
+}
+
+export function clearTasting() {
+	return { type: CLEAR_TASTING };
 }

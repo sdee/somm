@@ -5,6 +5,11 @@ import TastingPreview from '../containers/TastingPreview';
 import SaveTasting from '../containers/SaveTasting';
 
 export default class New extends React.Component {
+
+	componentDidMount() {
+		this.props.clearTasting();
+	}
+
 	render() {
 		return (
 		<div>
