@@ -1,10 +1,20 @@
 const koa = require('koa');
 const mongoose = require('mongoose');
-const KoaRestMongoose = require('koa-rest-mongoose');
+const express = require('express');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const restify = require('express-restify-mongoose');
+const app = express();
+const router = express.Router();
 const wineData = require('./src/data/wine.json');
 
 // 1 step, mongoose
 const mongoUrl = '127.0.0.1:27017/test';
+
+app.use(bodyParser.json());
+app.use(methodOverride());
+
+mongoose.connect(mongoUrl);
 
 const Schema = mongoose.Schema;
 console.log(wineData);
@@ -20,16 +30,10 @@ attributes.forEach((a) => {
 const TastingSchema = new mongoose.Schema(schemaSpec,
 { timestamps: { createdAt: 'created_at' } });
 
-mongoose.connect(mongoUrl);
-mongoose.model('Tasting', TastingSchema);
+restify.serve(router, mongoose.model('Tasting', schemaSpec));
 
-// 2 step, koa and router
-const app = koa();
-const rest = KoaRestMongoose({
-  prefix: '/api'
+app.use(router);
+
+app.listen(3000, () => {
+	console.log('Express server listening on port 3000');
 });
-app.use(rest.routes());
-
-// 3 step, done
-//http://localhost:5000/api/tasting/1
-app.listen(process.env.PORT || 5000);

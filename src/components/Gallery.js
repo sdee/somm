@@ -9,7 +9,7 @@ import ClearTasting from '../containers/ClearTasting';
 export default class Gallery extends React.Component {
 
 	componentDidMount() {
-    axios.get(`/api/tasting`)
+    axios.get(`/api/v1/tasting`)
     .then(({ data }) => {
       console.log("DATA");
     console.log(data);

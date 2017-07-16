@@ -14,7 +14,7 @@ export const CLEAR_TASTING = 'CLEAR_TASTING';
 */
 
 export function saveTasting(tasting, dispatch) {
-	return axios.post('/api/tasting/', tasting)
+	return axios.post('/api/v1/Tasting/', tasting)
     .then((response) => {
 	const id = response.data._id;
 	browserHistory.push(`/tasting/${id}`)

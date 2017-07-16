@@ -13,7 +13,7 @@ export default class TastingPage extends React.Component {
 	}
 
 	componentDidMount() {
-		axios.get(`/api/tasting/${this.props.params.tastingId}`)
+		axios.get(`/api/v1/tasting/${this.props.params.tastingId}`)
 .then(({ data }) => {
 	console.log(data);
 	this.props.loadTasting(omit(data, "_id", "__v", "created_at", "updatedAt"));
