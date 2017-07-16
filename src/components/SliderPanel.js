@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import RatingSlider from '../containers/RatingSlider'
 
 export default class SliderPanel extends React.Component {
