@@ -45,6 +45,9 @@ export default class RadarChart extends React.Component {
 	}
 	render() {
 		const currentTasting = this.props.currentTasting;
+		console.log("Current Tasting");
+		console.log(this.props.currentTasting.key);
+		console.log(this.props.currentTasting);
 		const labels = [];
 		const data = [];
 		for (const key of Object.keys(currentTasting)) {
@@ -56,7 +59,7 @@ export default class RadarChart extends React.Component {
 
 		return (
 			<div>
-				<Radar data={chartData} options={chartOptions} width="400" height="400" redraw />
+				<Radar key={chartData.key} id={chartData.key} data={chartData} options={chartOptions} width="400" height="400" redraw />
 			</div>
 		);
 	}
