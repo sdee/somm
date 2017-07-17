@@ -15,7 +15,7 @@ export default class Gallery extends React.Component {
 		};
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		axios.get('/api/v1/Tasting?limit=9')
     .then(({ data }) => {
 	console.log('DATA');
@@ -46,7 +46,7 @@ export default class Gallery extends React.Component {
 					<div className="col-lg-12">
 						<h1 className="page-header">Tastings Gallery</h1>
 					</div>
-					{this.state.tastings.map((tasting, i) => (<div><TastingThumbnail tasting={tasting} id={tasting.key} key={tasting.key} />{tasting.key}</div>))}
+					{this.state.tastings.map((tasting, i) => (<div><TastingThumbnail tasting={tasting} key={tasting.key} />{tasting.key}</div>))}
 				</div>
 			</div>
 		);
