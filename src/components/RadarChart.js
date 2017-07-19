@@ -1,9 +1,9 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import ReactBootstrapSlider from 'react-bootstrap-slider';
+import PropTypes from 'prop-types';
+
 const { Radar } = require('react-chartjs');
-
-
 
 export default class RadarChart extends React.Component {
 
@@ -31,9 +31,9 @@ export default class RadarChart extends React.Component {
 			scaleStepWidth: 1,
 			scaleStartValue: 0,
 			maintainAspectRatio: false,
-			scaleShowLabels: true,
+			scaleShowLabels: this.props.scaleShowLabels,
 			scaleBeginAtZero: false,
-			pointDot: true,
+			pointDot: this.props.pointDot,
 			scale: {
 				reverse: false,
 				ticks: {
@@ -59,8 +59,31 @@ export default class RadarChart extends React.Component {
 
 		return (
 			<div>
-				<Radar key={this.chartData.key} id={this.chartData.key} data={this.chartData} options={this.chartOptions} width="400" height="400" redraw />
+				<Radar
+					key={this.chartData.key}
+					id={this.chartData.key}
+					data={this.chartData}
+					options={this.chartOptions}
+					width={this.props.width.toString()}
+					height={this.props.height.toString()}
+					redraw
+				/>
 			</div>
 		);
 	}
 }
+
+RadarChart.propTypes = {
+	currentTasting: PropTypes.object.isRequired,
+	height: PropTypes.number.isOptional,
+	width: PropTypes.number.isOptional,
+	pointDot: PropTypes.bool.isOptional,
+	scaleShowLabels: PropTypes.bool.isOptional
+};
+
+RadarChart.defaultProps = {
+	width: 400,
+	height: 400,
+	pointDot: true,
+	scaleShowLabels: true
+};
